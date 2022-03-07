@@ -14,7 +14,7 @@ CORS(app)
 
 model = joblib.load(open('nb_clf', 'rb'))
 
-@app.route('/hello')
+@app.route('/')
 def hello():
     #return {'message':'successful', 'result': 'hello'}
     return render_template('index.html')
