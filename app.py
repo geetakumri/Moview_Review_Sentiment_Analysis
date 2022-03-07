@@ -7,6 +7,8 @@ import predict
 import json
 
 app = Flask(__name__)
+server = Flask(__name__)
+app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP], server=server)
 CORS(app)
 
 model = joblib.load(open('nb_clf', 'rb'))
@@ -54,4 +56,4 @@ def prediction():
     return render_template('index.html', prediction_text='Movie sentiment is {}'.format(res))  
 
 if __name__ == '__main__':
-    app.run(debug = True, port = 8000)
+    app.run(debug = True)
