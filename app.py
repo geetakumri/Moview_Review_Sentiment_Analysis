@@ -1,8 +1,5 @@
-from cmath import phase
-from flask import Flask, render_template,request, jsonify
-from os.path import join
+from flask import Flask, render_template,request
 from flask_cors import CORS
-from graphviz import render
 import joblib
 import pandas as pd
 import datapreprocessing as proc
